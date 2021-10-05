@@ -10,14 +10,14 @@ RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror
 
-# *-------Libft-------* 
-
-LIBFT_DIR = libft
-LIBFT_PATH = ./libft
-L_FLAGS = -L$(LIBFT_PATH) -lft
-
 # .c.o:
 # 			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+
+# *-------Libft-------* 
+
+LIBFT_DIR = Libft
+LIBFT_PATH = ./Libft
+LFLAGS = -L$(LIBFT_PATH) -lft
 
 # *=======RULES=======*
 
@@ -25,7 +25,7 @@ all:		$(NAME)
 			
 $(NAME):	$(OBJS)
 			@make -C $(LIBFT_DIR)
-	        $(CC) $(CFLAGS) $(LFLAGS) $(OBJS) -o $(NAME)
+	        $(CC) $(CFLAGS) $(OBJS) $(LFLAGS) -o $(NAME)
 
 $(MAKE_LIBFT): @make -c $(LIBFT_PATH)
 

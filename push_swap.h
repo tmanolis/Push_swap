@@ -16,7 +16,7 @@
 # define SUCCESS 1
 # define FAILURE 0
 
-# include "./libft/libft.h"
+# include "./Libft/libft.h"
 # include <unistd.h>
 
 typedef struct s_data
