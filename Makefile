@@ -1,4 +1,5 @@
 SRCS = main.c		\
+	utils.c			\
 	check_errors.c	\
 		
 OBJS = $(SRCS:.c=.o)
