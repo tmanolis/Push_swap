@@ -1,8 +1,18 @@
-SRCS = main.c		\
-	utils.c			\
-	check_errors.c	\
+# *--------- SOURCES ---------* 
+
+SRCS_DIR = ./srcs/
+SRCS = utils/check_errors.c		\
+	utils/convert_c_to_i.c		\
 		
-OBJS = $(SRCS:.c=.o)
+OBJS = $(addprefix $(SRCS_DIR), $(SRCS:.c=.o))
+
+# *--------- Libft ---------* 
+
+LIBFT_DIR = Libft
+LIBFT_PATH = ./Libft
+LFLAGS = -L$(LIBFT_PATH) -lft
+
+# *--------- OTHERS ---------*
 
 NAME = push_swap
 
@@ -14,19 +24,13 @@ CFLAGS = -Wall -Wextra -Werror
 # .c.o:
 # 			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
-# *-------Libft-------* 
-
-LIBFT_DIR = Libft
-LIBFT_PATH = ./Libft
-LFLAGS = -L$(LIBFT_PATH) -lft
-
-# *=======RULES=======*
+# *========= RULES =========*
 
 all:		$(NAME)
 			
 $(NAME):	$(OBJS)
 			@make -C $(LIBFT_DIR)
-	        $(CC) $(CFLAGS) $(OBJS) $(LFLAGS) -o $(NAME)
+	        $(CC) $(CFLAGS) $(OBJS) main.c $(LFLAGS) -o $(NAME)
 
 $(MAKE_LIBFT): @make -c $(LIBFT_PATH)
 
