@@ -2,7 +2,8 @@
 
 SRCS_DIR = ./srcs/
 SRCS = utils/check_errors.c		\
-	utils/convert_c_to_i.c		\
+	utils/get_args.c			\
+	utils/init_and_free.c		\
 		
 OBJS = $(addprefix $(SRCS_DIR), $(SRCS:.c=.o))
 

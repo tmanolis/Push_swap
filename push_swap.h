@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:31:04 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/11 17:46:19 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/12 17:25:06 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,19 @@
 # include "./Libft/libft.h"
 # include <unistd.h>
 
-// typedef struct  s_list
-// {
-//     void            *content;
-//     struct s_list   *next;
-// }               t_list;
-
 typedef struct s_data
 {
 	t_list	*lst_a;
 	t_list	*lst_b;
 }				t_data;
 
-// UTILS
-int		convert_c_to_i(int argc, char **argv, t_data *data);
-void	init_struct(t_data data);
-
-// CHECK_ERRORS
+// UTILS --- check_error
 int		arg_isdigit(int argc, char **argv);
 int		check_duplicate(t_data *data);
+// UTILS --- get_args
+int		fill_lst_a(int argc, char **argv, t_data *data);
+// UTILS --- init_and_free
+void	init_struct(t_data *data);
+void	free4yourlife(t_data *data);
 
 #endif
