@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 16:28:26 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/12 17:23:07 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/14 17:35:02 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int	main(int argc, char **argv)
 		return (write(2, "Error\n", 6));
 	else if (fill_lst_a(argc, argv, data) == FAILURE)
 		return (write(2, "Error : couldn't get the arguments\n", 35));
-	// if (check_duplicate(data))
-	// 	return (write(2, "Error\n", 6));
+	else if (check_duplicate(data) == FAILURE)
+		return (write(2, "Error\n", 6));
 }
