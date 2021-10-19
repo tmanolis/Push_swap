@@ -6,25 +6,46 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 11:49:45 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/12 17:53:21 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/19 18:32:02 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 #include <stdio.h>
 
-// int	ft_atol()
+long int	atol(const char *str)
+{
+	int			i;
+	int			j;
+	long int	value;
+
+	i = 0;
+	j = 1;
+	value = 0;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			j = -1;
+		i++;
+	}
+	while (ft_isdigit(str[i]))
+	{
+		value = value * 10 + (str[i] - 48);
+		i++;
+	}
+	return (value * j);
+}
 
 int	fill_lst_a(int argc, char **argv, t_data *data)
 {
-	int		i;
-	int		content;
-	t_list	*new;
+	int			i;
+	long int	content;
+	t_list		*new;
 
 	i = 1;
 	while (i < argc)
 	{
-		content = ft_atoi(argv[i]); // ATTENTION : CODER ATOL
+		content = atol(argv[i]);
 		new = ft_lstnew(content);
 		if (!new)
 			return (0);

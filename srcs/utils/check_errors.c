@@ -6,11 +6,12 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 16:49:11 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/14 18:06:42 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/19 18:29:16 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
+#include <stdio.h>
 
 int	arg_isdigit(int argc, char **argv)
 {
@@ -21,9 +22,11 @@ int	arg_isdigit(int argc, char **argv)
 	while (i < argc)
 	{
 		character = 0;
+		if (argv[i][character] == '-' || argv[i][character] == '+')
+			character++;
 		while (argv[i][character] != '\0')
 		{
-			if ((ft_isdigit(argv[i][character]) == FAILURE))
+			if (ft_isdigit(argv[i][character]) == FAILURE)
 				return (0);
 			character++;
 		}
@@ -35,26 +38,45 @@ int	arg_isdigit(int argc, char **argv)
 int	check_duplicate(t_data *data)
 {
 	size_t		i;
-	size_t		size;
+	size_t		len;
 	long int	arg;
 	t_list		*tmp;
 	t_list		*nod;
 
 	i = 0;
-	size = ft_lstsize(data->lst_a);
+	len = data->len;
 	tmp = data->lst_a;
 	nod = tmp;
-	while (i < size)
+	while (i < len)
 	{
 		arg = nod->content;
-		tmp = data->lst_a;
+		tmp = nod;
 		while (tmp->next != NULL)
 		{
 			tmp = tmp->next;
 			if (arg == tmp->content)
-				return (0);
+				return (FAILURE);
 		}
 		nod = nod->next;
+		i++;
+	}
+	return (SUCCESS);
+}
+
+int	check_int_value(t_data *data)
+{
+	size_t		i;
+	size_t		len;
+	t_list		*tmp;
+
+	i = 0;
+	len = data->len;
+	tmp = data->lst_a;
+	while (i < len)
+	{
+		if ((tmp->content < INT_MIN) || (tmp->content > INT_MAX))
+			return (0);
+		tmp = tmp->next;
 		i++;
 	}
 	return (1);

@@ -33,7 +33,7 @@ $(NAME):	$(OBJS)
 			@make -C $(LIBFT_DIR)
 	        $(CC) $(CFLAGS) $(OBJS) main.c $(LFLAGS) -o $(NAME)
 
-$(MAKE_LIBFT): @make -c $(LIBFT_PATH)
+# $(MAKE_LIBFT): @make -c $(LIBFT_PATH)
 
 clean:		
 			@cd $(LIBFT_PATH) && $(MAKE) clean
