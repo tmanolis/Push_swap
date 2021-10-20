@@ -6,12 +6,11 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 11:49:45 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/19 18:32:02 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/20 12:05:33 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
-#include <stdio.h>
 
 long int	atol(const char *str)
 {
@@ -48,9 +47,9 @@ int	fill_lst_a(int argc, char **argv, t_data *data)
 		content = atol(argv[i]);
 		new = ft_lstnew(content);
 		if (!new)
-			return (0);
+			return (FAILURE);
 		ft_lstadd_back(&data->lst_a, new);
 		i++;
 	}
-	return (1);
+	return (SUCCESS);
 }

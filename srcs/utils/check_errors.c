@@ -6,12 +6,11 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 16:49:11 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/19 18:29:16 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/20 12:10:31 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
-#include <stdio.h>
 
 int	arg_isdigit(int argc, char **argv)
 {
@@ -27,12 +26,12 @@ int	arg_isdigit(int argc, char **argv)
 		while (argv[i][character] != '\0')
 		{
 			if (ft_isdigit(argv[i][character]) == FAILURE)
-				return (0);
+				return (FAILURE);
 			character++;
 		}
 		i++;
 	}
-	return (1);
+	return (SUCCESS);
 }
 
 int	check_duplicate(t_data *data)
@@ -75,9 +74,9 @@ int	check_int_value(t_data *data)
 	while (i < len)
 	{
 		if ((tmp->content < INT_MIN) || (tmp->content > INT_MAX))
-			return (0);
+			return (FAILURE);
 		tmp = tmp->next;
 		i++;
 	}
-	return (1);
+	return (SUCCESS);
 }

@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_and_free.c                                    :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 17:41:35 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/20 13:58:40 by tmanolis         ###   ########.fr       */
+/*   Created: 2021/10/20 12:08:59 by tmanolis          #+#    #+#             */
+/*   Updated: 2021/10/20 14:07:03 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
+#include <stdio.h>
 
-void	init_struct(t_data *data, int argc)
+void	swap_a(t_data *data)
 {
-	data->lst_a = NULL;
-	data->lst_b = NULL;
-	data->len = argc - 1;
+	t_list *tmp;
+
+	tmp = data->lst_a;
+	data->lst_a = data->lst_a->next;
+	tmp->next = data->lst_a->next;
+	data->lst_a->next = tmp;
+	
+	// tmp = data->lst_a;
+	// while (tmp)
+	// {
+	// 	printf("%ld\n", tmp->content);
+	// 	tmp = tmp->next;
+	// }
 }
 
-void	lstclear(t_list *lst)
+void	swap_b(t_data *data)
 {
-	void	*tmp;
-	void	*pt_initial;
+	t_list *tmp;
 
-	pt_initial = lst;
-	while (lst != NULL)
-	{
-		tmp = lst->next;
-		free(lst);
-		lst = tmp;
-	}
-	pt_initial = NULL;
-}
-
-void	free4yourlife(t_data *data)
-{
-	lstclear(data->lst_a);
-	lstclear(data->lst_b);
+	tmp = data->lst_b;
+	data->lst_b = data->lst_b->next;
+	tmp->next = data->lst_b->next;
+	data->lst_b->next = tmp;	
 }
