@@ -1,22 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/25 15:14:31 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/20 17:08:36 by tmanolis         ###   ########.fr       */
+/*   Created: 2021/10/20 16:53:04 by tmanolis          #+#    #+#             */
+/*   Updated: 2021/10/20 17:18:23 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../push_swap.h"
 
-void	ft_lstadd_front(t_list **alst, t_list *new)
+void	push_a(t_data *data)
 {
-	if (new)
+	t_list	*tmp;
+
+	if (data->lst_b)
 	{
-		new->next = *alst;
-		*alst = new;
+		tmp = data->lst_b;
+		data->lst_b = data->lst_b->next;
+		tmp->next = NULL;
+		ft_lstadd_front(&data->lst_a, tmp);
+	}
+}
+
+void	push_b(t_data *data)
+{
+	t_list	*tmp;
+
+	if (data->lst_a)
+	{
+		tmp = data->lst_a;
+		data->lst_a = data->lst_a->next;
+		tmp->next = NULL;
+		ft_lstadd_front(&data->lst_b, tmp);
 	}
 }

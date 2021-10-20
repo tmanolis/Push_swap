@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:31:04 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/20 15:35:07 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/20 17:18:36 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ typedef struct s_data
 	size_t	len;
 }				t_data;
 
+// OPERATIONS --- push
+void	push_a(t_data *data);
+void	push_b(t_data *data);
 // OPERATIONS --- reverse_rotate
 void	reverse_rotate_a(t_data *data);
 void	reverse_rotate_b(t_data *data);

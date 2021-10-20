@@ -6,11 +6,12 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 16:28:26 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/20 15:22:07 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/20 17:24:04 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void f(void)
 {
@@ -36,8 +37,22 @@ int	main(int argc, char **argv)
 		free4yourlife(data);
 		return (write(2, "Error\n", 6));
 	}
-	reverse_rotate_a(data);
+	t_list *tmp;
+	tmp = data->lst_a;
+	printf("STACK A : ");
+	while (tmp)
+	{
+		printf("%ld ", tmp->content);
+		tmp = tmp->next;
+	}
+	printf("\nSTACK B : ");
+	tmp = data->lst_b;
+	while (tmp)
+	{
+		printf("%ld ", tmp->content);
+		tmp = tmp->next;
+	}
 	free4yourlife(data);
-	atexit(f);
+	// atexit(f);
 	return (0);
 }
