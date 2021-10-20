@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 16:28:26 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/20 14:48:57 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/20 15:22:07 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int argc, char **argv)
 		free4yourlife(data);
 		return (write(2, "Error\n", 6));
 	}
-	rotate_a(data);
+	reverse_rotate_a(data);
 	free4yourlife(data);
 	atexit(f);
 	return (0);

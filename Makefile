@@ -6,6 +6,7 @@ SRCS = utils/check_errors.c		\
 	utils/init_and_free.c		\
 	operations/swap.c			\
 	operations/rotate.c			\
+	operations/reverse_rotate.c	\
 		
 OBJS = $(addprefix $(SRCS_DIR), $(SRCS:.c=.o))
 
