@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 14:15:08 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/20 15:34:47 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/20 17:50:12 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	rotate_a(t_data *data)
 	last_nod = ft_lstlast(data->lst_a);
 	tmp->next = NULL;
 	last_nod->next = tmp;
+	write(1, "ra\n", 3);
 }
 
 void	rotate_b(t_data *data)
@@ -34,10 +35,12 @@ void	rotate_b(t_data *data)
 	last_nod = ft_lstlast(data->lst_b);
 	tmp->next = NULL;
 	last_nod->next = tmp;
+	write(1, "rb\n", 3);
 }
 
 void	rotate_both(t_data *data)
 {
 	rotate_a(data);
 	rotate_b(data);
+	write(1, "rr\n", 3);
 }

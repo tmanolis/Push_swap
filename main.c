@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 16:28:26 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/20 17:24:04 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/20 18:08:37 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ int	main(int argc, char **argv)
 		tmp = tmp->next;
 	}
 	free4yourlife(data);
-	// atexit(f);
+	atexit(f);
 	return (0);
 }
