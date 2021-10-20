@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:31:04 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/20 14:01:44 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/20 14:13:57 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_data
 // OPERATIONS --- swap
 void	swap_a(t_data *data);
 void	swap_b(t_data *data);
+void	swap_both(t_data *data);
 // UTILS --- check_error
 int		arg_isdigit(int argc, char **argv);
 int		check_duplicate(t_data *data);
