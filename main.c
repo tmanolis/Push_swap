@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 16:28:26 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/21 14:42:06 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/21 15:46:41 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ int	main(int argc, char **argv)
 	init_struct(data, argc);
 	if (check_all_errors(data, argc, argv) == FAILURE)
 		return (0);
-	display_stack(data);
+	decide_what_to_do(data);
+	// display_stack(data);
 	free4yourlife(data);
 	atexit(f);
 	return (1);

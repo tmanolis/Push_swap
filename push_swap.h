@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:31:04 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/21 14:35:10 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/21 15:09:43 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,13 @@ void	swap_a(t_data *data);
 void	swap_b(t_data *data);
 void	swap_both(t_data *data);
 // UTILS --- check_error
-int		arg_isdigit(int argc, char **argv);
-int		check_duplicate(t_data *data);
-int		check_int_value(t_data *data);
 int		check_all_errors(t_data *data, int argc, char **argv);
 // UTILS --- get_args
 int		fill_lst_a(int argc, char **argv, t_data *data);
 // UTILS --- init_and_free
 void	init_struct(t_data *data, int argc);
 void	free4yourlife(t_data *data);
+// UTILS --- parsing
+void	decide_what_to_do(t_data *data);
 
 #endif

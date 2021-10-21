@@ -4,6 +4,7 @@ SRCS_DIR = ./srcs/
 SRCS = utils/check_errors.c		\
 	utils/get_args.c			\
 	utils/init_and_free.c		\
+	utils/parsing.c				\
 	operations/swap.c			\
 	operations/rotate.c			\
 	operations/reverse_rotate.c	\
