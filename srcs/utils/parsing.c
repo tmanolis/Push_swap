@@ -6,19 +6,16 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 14:54:12 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/21 16:49:14 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/21 17:01:09 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
-#include <stdio.h>
 
-void	apply_algorithm(t_data *data)
+void	apply_algorithm(t_data *data, int argc)
 {
-	t_list	*tmp;
-
-	tmp = data->lst_a;
-	write(1, "OK\n", 3);
+	if (argc == 3)
+		sort_2_args(data);
 }
 
 int		check_args_not_sorted(t_data *data)
@@ -39,10 +36,10 @@ int		check_args_not_sorted(t_data *data)
 	return (FAILURE);
 }
 
-void	decide_what_to_do(t_data *data)
+void	decide_what_to_do(t_data *data, int argc)
 {
 	if (check_args_not_sorted(data) == SUCCESS)
-		apply_algorithm(data);
+		apply_algorithm(data, argc);
 	else
 		write(1, "already sorted\n", 15);
 }

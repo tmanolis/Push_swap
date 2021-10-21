@@ -1,14 +1,15 @@
 # *--------- SOURCES ---------* 
 
 SRCS_DIR = ./srcs/
-SRCS = utils/check_errors.c		\
+SRCS = algorithm/sort_2_args.c	\
+	operations/push.c			\
+	operations/rotate.c			\
+	operations/reverse_rotate.c	\
+	operations/swap.c			\
+	utils/check_errors.c		\
 	utils/get_args.c			\
 	utils/init_and_free.c		\
 	utils/parsing.c				\
-	operations/swap.c			\
-	operations/rotate.c			\
-	operations/reverse_rotate.c	\
-	operations/push.c			\
 		
 OBJS = $(addprefix $(SRCS_DIR), $(SRCS:.c=.o))
 

@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:31:04 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/21 15:09:43 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/21 17:02:36 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef struct s_data
 	size_t	len;
 }				t_data;
 
+// ALGORITHM --- sort_2_args
+void	sort_2_args(t_data *data);
 // OPERATIONS --- push
 void	push_a(t_data *data);
 void	push_b(t_data *data);
@@ -50,6 +52,6 @@ int		fill_lst_a(int argc, char **argv, t_data *data);
 void	init_struct(t_data *data, int argc);
 void	free4yourlife(t_data *data);
 // UTILS --- parsing
-void	decide_what_to_do(t_data *data);
+void	decide_what_to_do(t_data *data, int argc);
 
 #endif
