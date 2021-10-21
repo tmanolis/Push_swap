@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 16:49:11 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/20 12:10:31 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/21 14:41:44 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,30 @@ int	check_int_value(t_data *data)
 		i++;
 	}
 	return (SUCCESS);
+}
+
+int	check_all_errors(t_data *data, int argc, char **argv)
+{
+	if (argc == 1)
+		return (FAILURE);
+	else if (arg_isdigit(argc, argv) == FAILURE)
+	{
+		write(2, "Error\n", 6);
+		return (FAILURE);
+	}
+	else if (fill_lst_a(argc, argv, data) == FAILURE)
+	{
+		free4yourlife(data);
+		write(2, "Error : couldn't get the arguments\n", 35);
+		return (FAILURE);
+	}
+	else if (check_duplicate(data) == FAILURE 
+			|| check_int_value(data) == FAILURE)
+	{
+		free4yourlife(data);
+		write(2, "Error\n", 6);
+		return (FAILURE);
+	}
+	else
+		return (SUCCESS);
 }

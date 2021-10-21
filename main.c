@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 16:28:26 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/20 18:08:37 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/21 14:42:06 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,41 +18,50 @@ void f(void)
 	system("leaks push_swap");
 }
 
+void    display_stack(t_data *data)
+{
+    int i;
+	int	len;
+    t_list *tmp;
+
+    i = 1;
+    tmp = data->lst_a;
+	len = ft_lstsize(data->lst_a);
+    printf("  |====== STACK A ======|\n");    
+    printf("  |                     |\n");
+    while (i <= len)
+    {
+		printf("       i: %d  No: %ld      \n", i, tmp->content);
+       	i++;
+		tmp = tmp->next;
+    }
+    printf("  |                     |\n");
+    printf("  |=====================|\n\n\n");
+
+	i = 1;
+    tmp = data->lst_b;
+	len = ft_lstsize(data->lst_b);
+    printf("  |====== STACK B ======|\n");    
+    printf("  |                     |\n");
+    while (i <= len)
+    {
+		printf("       i: %d  No: %ld      \n", i, tmp->content);
+       	i++;
+		tmp = tmp->next;
+    }
+    printf("  |                     |\n");
+    printf("  |=====================|\n");
+}
+
 int	main(int argc, char **argv)
 {
 	t_data	data[1];
 	
 	init_struct(data, argc);
-	if (argc == 1)
+	if (check_all_errors(data, argc, argv) == FAILURE)
 		return (0);
-	else if (arg_isdigit(argc, argv) == FAILURE)
-		return (write(2, "Error\n", 6));
-	else if (fill_lst_a(argc, argv, data) == FAILURE)
-	{
-		free4yourlife(data);
-		return (write(2, "Error : couldn't get the arguments\n", 35));
-	}
-	else if (check_duplicate(data) == FAILURE || check_int_value(data) == FAILURE)
-	{
-		free4yourlife(data);
-		return (write(2, "Error\n", 6));
-	}
-	t_list *tmp;
-	tmp = data->lst_a;
-	printf("STACK A : ");
-	while (tmp)
-	{
-		printf("%ld ", tmp->content);
-		tmp = tmp->next;
-	}
-	printf("\nSTACK B : ");
-	tmp = data->lst_b;
-	while (tmp)
-	{
-		printf("%ld ", tmp->content);
-		tmp = tmp->next;
-	}
+	display_stack(data);
 	free4yourlife(data);
 	atexit(f);
-	return (0);
+	return (1);
 }
