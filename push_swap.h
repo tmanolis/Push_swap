@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:31:04 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/26 15:21:16 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/26 17:03:40 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ void	sort_2_args(t_data *data);
 // ALGORITHM --- sort_3_args
 void	sort_3_args(t_data *data);
 // ALGORITHM --- sort_4_args
+t_list	*find_smallest_nod(t_data *data);
 void	sort_4_args(t_data *data);
+// ALGORITHM --- sort_5_args
+void	sort_5_args(t_data *data);
 // OPERATIONS --- push
 void	push_a(t_data *data);
 void	push_b(t_data *data);
