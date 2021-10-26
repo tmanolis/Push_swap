@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 16:49:11 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/21 14:41:44 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/26 15:23:14 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,8 @@ int	check_all_errors(t_data *data, int argc, char **argv)
 		write(2, "Error : couldn't get the arguments\n", 35);
 		return (FAILURE);
 	}
-	else if (check_duplicate(data) == FAILURE 
-			|| check_int_value(data) == FAILURE)
+	else if (check_duplicate(data) == FAILURE
+		|| check_int_value(data) == FAILURE)
 	{
 		free4yourlife(data);
 		write(2, "Error\n", 6);

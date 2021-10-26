@@ -6,13 +6,11 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 11:21:57 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/26 15:12:38 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/26 15:26:58 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
-#include <stdio.h>
-
 
 t_list	*find_biggest_nod(t_data *data)
 {
@@ -48,8 +46,8 @@ void	switch_biggest_in_the_end(t_data *data)
 
 void	sort_3_args(t_data *data)
 {
-	t_list *first_nod;
-	t_list *second_nod;
+	t_list	*first_nod;
+	t_list	*second_nod;
 
 	switch_biggest_in_the_end(data);
 	first_nod = data->lst_a;

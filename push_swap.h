@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:31:04 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/26 11:22:26 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/26 15:21:16 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ typedef struct s_data
 
 // ALGORITHM --- sort_2_args
 void	sort_2_args(t_data *data);
-// ALGORITHM --- sort_2_args
+// ALGORITHM --- sort_3_args
 void	sort_3_args(t_data *data);
+// ALGORITHM --- sort_4_args
+void	sort_4_args(t_data *data);
 // OPERATIONS --- push
 void	push_a(t_data *data);
 void	push_b(t_data *data);

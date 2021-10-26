@@ -6,21 +6,13 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 14:54:12 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/26 11:21:48 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/26 15:24:53 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	apply_algorithm(t_data *data, int argc)
-{
-	if (argc == 3)
-		sort_2_args(data);
-	if (argc == 4)
-		sort_3_args(data);
-}
-
-int		check_args_not_sorted(t_data *data)
+int	check_args_not_sorted(t_data *data)
 {
 	t_list		*tmp;
 	long int	number;
@@ -36,6 +28,16 @@ int		check_args_not_sorted(t_data *data)
 		tmp = tmp->next;
 	}
 	return (FAILURE);
+}
+
+void	apply_algorithm(t_data *data, int argc)
+{
+	if (argc == 3)
+		sort_2_args(data);
+	if (argc == 4)
+		sort_3_args(data);
+	if (argc == 5)
+		sort_4_args(data);
 }
 
 void	decide_what_to_do(t_data *data, int argc)
