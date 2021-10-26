@@ -2,6 +2,7 @@
 
 SRCS_DIR = ./srcs/
 SRCS = algorithm/sort_2_args.c	\
+	algorithm/sort_3_args.c		\
 	operations/push.c			\
 	operations/rotate.c			\
 	operations/reverse_rotate.c	\

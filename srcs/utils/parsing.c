@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 14:54:12 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/21 17:01:09 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/26 11:21:48 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	apply_algorithm(t_data *data, int argc)
 {
 	if (argc == 3)
 		sort_2_args(data);
+	if (argc == 4)
+		sort_3_args(data);
 }
 
 int		check_args_not_sorted(t_data *data)
