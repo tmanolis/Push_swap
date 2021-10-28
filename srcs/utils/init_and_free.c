@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 17:41:35 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/20 13:58:40 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/28 19:42:48 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	init_struct(t_data *data, int argc)
 	data->lst_a = NULL;
 	data->lst_b = NULL;
 	data->len = argc - 1;
+	data->array_tmp = NULL;
 }
 
 void	lstclear(t_list *lst)
@@ -38,4 +39,5 @@ void	free4yourlife(t_data *data)
 {
 	lstclear(data->lst_a);
 	lstclear(data->lst_b);
+	free(data->array_tmp);
 }

@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:31:04 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/26 17:03:40 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/28 19:39:12 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@
 
 typedef struct s_data
 {
-	t_list	*lst_a;
-	t_list	*lst_b;
-	size_t	len;
+	t_list		*lst_a;
+	t_list		*lst_b;
+	size_t		len;
+	long int	*array_tmp;
 }				t_data;
 
 // ALGORITHM --- sort_2_args
@@ -36,6 +37,8 @@ t_list	*find_smallest_nod(t_data *data);
 void	sort_4_args(t_data *data);
 // ALGORITHM --- sort_5_args
 void	sort_5_args(t_data *data);
+
+void	sort_more_than_5_args(t_data *data);
 // OPERATIONS --- push
 void	push_a(t_data *data);
 void	push_b(t_data *data);

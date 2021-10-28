@@ -6,12 +6,12 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 15:54:08 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/12 17:43:17 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/10/28 19:33:33 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-# define	LIBFT_H
+# define LIBFT_H
 
 # include <stddef.h>
 # include <unistd.h>
