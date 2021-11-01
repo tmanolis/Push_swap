@@ -45,7 +45,9 @@ long int	find_median(t_data *data)
 	t_list		*tmp;
 
 	i = 0;
-	len = data->len;
+	len = ft_lstsize(data->lst_a);
+	if (data->array_tmp)
+		free(data->array_tmp);
 	data->array_tmp = (long int *)malloc(sizeof(long int) * len);
 	if (!data->array_tmp)
 		return (0);
@@ -67,18 +69,20 @@ long int	find_median(t_data *data)
 void	split_and_push(t_data *data)
 {
 	size_t		i;
+	size_t		len;
 	long int	median;
 	t_list		*tmp;
 	t_list		*tmp_b_next;
 
 	i = 0;
+	len = ft_lstsize(data->lst_a);
 	median = find_median(data);
-	while (i < data->len)
+	while (i < len)
 	{
 		tmp = data->lst_a;
 		if (tmp->content < median)
 			push_b(data);
-		else
+		else if (i < len - 1)
 		{
 			if (data->lst_b && data->lst_b->next != NULL) 
 			{	
@@ -93,4 +97,6 @@ void	split_and_push(t_data *data)
 		}
 		i++;
 	}
+	printf("len : %ld\n", len);
+	printf("i : %ld\n", i);
 }
