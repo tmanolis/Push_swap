@@ -36,7 +36,15 @@ void	swap_b(t_data *data)
 
 void	swap_both(t_data *data)
 {
-	swap_a(data);
-	swap_b(data);
+	t_list	*tmp;
+
+	tmp = data->lst_a;
+	data->lst_a = data->lst_a->next;
+	tmp->next = data->lst_a->next;
+	data->lst_a->next = tmp;
+	tmp = data->lst_b;
+	data->lst_b = data->lst_b->next;
+	tmp->next = data->lst_b->next;
+	data->lst_b->next = tmp;
 	write(1, "ss\n", 3);
 }

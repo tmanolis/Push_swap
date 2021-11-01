@@ -55,7 +55,18 @@ void	reverse_rotate_b(t_data *data)
 
 void	reverse_rotate_both(t_data *data)
 {
-	reverse_rotate_a(data);
-	reverse_rotate_b(data);
+	t_list	*last_nod;
+	t_list	*before_last_nod;
+
+	last_nod = ft_lstlast(data->lst_a);
+	before_last_nod = find_before_last_nod(data->lst_a);
+	before_last_nod->next = NULL;
+	last_nod->next = data->lst_a;
+	data->lst_a = last_nod;
+	last_nod = ft_lstlast(data->lst_b);
+	before_last_nod = find_before_last_nod(data->lst_b);
+	before_last_nod->next = NULL;
+	last_nod->next = data->lst_b;
+	data->lst_b = last_nod;
 	write(1, "rrr\n", 4);
 }

@@ -40,7 +40,18 @@ void	rotate_b(t_data *data)
 
 void	rotate_both(t_data *data)
 {
-	rotate_a(data);
-	rotate_b(data);
+	t_list	*tmp;
+	t_list	*last_nod;
+
+	tmp = data->lst_a;
+	data->lst_a = data->lst_a->next;
+	last_nod = ft_lstlast(data->lst_a);
+	tmp->next = NULL;
+	last_nod->next = tmp;
+	tmp = data->lst_b;
+	data->lst_b = data->lst_b->next;
+	last_nod = ft_lstlast(data->lst_b);
+	tmp->next = NULL;
+	last_nod->next = tmp;
 	write(1, "rr\n", 3);
 }
