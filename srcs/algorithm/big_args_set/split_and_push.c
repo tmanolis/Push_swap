@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../../../push_swap.h"
 #include <stdio.h>
 
 void	sort_array(long int *array, int len)
@@ -60,13 +60,37 @@ long int	find_median(t_data *data)
 	if (!(len % 2))
 		len++;
 	median = data->array_tmp[len / 2];
+	printf("median : %ld\n", median);
 	return (median);
 }
 
-void	sort_more_than_5_args(t_data *data)
+void	split_and_push(t_data *data)
 {
+	size_t		i;
 	long int	median;
+	t_list		*tmp;
+	t_list		*tmp_b_next;
 
+	i = 0;
 	median = find_median(data);
-	printf("median : %ld\n", median);
+	while (i < data->len)
+	{
+		tmp = data->lst_a;
+		if (tmp->content < median)
+			push_b(data);
+		else
+		{
+			if (data->lst_b && data->lst_b->next != NULL) 
+			{	
+				tmp_b_next = data->lst_b->next;
+				if (data->lst_b->content < tmp_b_next->content)
+					rotate_both(data);
+				else
+					rotate_a(data);
+			}
+			else
+				rotate_a(data);
+		}
+		i++;
+	}
 }

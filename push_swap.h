@@ -37,8 +37,10 @@ t_list	*find_smallest_nod(t_data *data);
 void	sort_4_args(t_data *data);
 // ALGORITHM --- sort_5_args
 void	sort_5_args(t_data *data);
-
-void	sort_more_than_5_args(t_data *data);
+// ALGORITHM/BIG_ARGS_SET --- sort_big_set
+void	sort_big_set(t_data *data);
+// ALGORITHM/BIG_ARGS_SET --- median_and_check
+void	split_and_push(t_data *data);
 // OPERATIONS --- push
 void	push_a(t_data *data);
 void	push_b(t_data *data);

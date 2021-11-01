@@ -41,7 +41,7 @@ void	apply_algorithm(t_data *data, int argc)
 	if (argc == 6)
 		sort_5_args(data);
 	if (argc > 6)
-		sort_more_than_5_args(data);
+		sort_big_set(data);
 }
 
 void	decide_what_to_do(t_data *data, int argc)
@@ -49,5 +49,5 @@ void	decide_what_to_do(t_data *data, int argc)
 	if (check_args_not_sorted(data) == SUCCESS)
 		apply_algorithm(data, argc);
 	else
-		write(1, "already sorted\n", 15);
+		write(2, "already sorted\n", 15);
 }
