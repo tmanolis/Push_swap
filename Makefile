@@ -29,7 +29,7 @@ LFLAGS = -L$(LIBFT_PATH) -lft
 
 NAME = push_swap
 
-CC = gcc
+CC = clang
 RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror

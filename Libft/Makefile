@@ -64,7 +64,7 @@ NAME = libft.a
 
 LINK = ar rc
 
-CC = gcc
+CC = clang
 RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror

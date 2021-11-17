@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:31:04 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/02 18:15:11 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/17 18:15:51 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	push_back_and_sort(t_data *data);
 // ALGORITHM/BIG_ARGS_SET --- sort_big_set
 void	sort_big_set(t_data *data);
 // ALGORITHM/BIG_ARGS_SET --- split_and_push
-void	split_and_push(t_data *data);
+void	split_a_and_push(t_data *data);
 // OPERATIONS --- push
 void	push_a(t_data *data);
 void	push_b(t_data *data);
@@ -66,6 +66,7 @@ int		fill_lst_a(int argc, char **argv, t_data *data);
 void	init_struct(t_data *data, int argc);
 void	free4yourlife(t_data *data);
 // UTILS --- parsing
+int		check_args_not_sorted(t_data *data);
 void	decide_what_to_do(t_data *data, int argc);
 
 #endif

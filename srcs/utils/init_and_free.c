@@ -23,16 +23,13 @@ void	init_struct(t_data *data, int argc)
 void	lstclear(t_list *lst)
 {
 	void	*tmp;
-	void	*pt_initial;
-
-	pt_initial = lst;
+	
 	while (lst != NULL)
 	{
 		tmp = lst->next;
 		free(lst);
 		lst = tmp;
 	}
-	pt_initial = NULL;
 }
 
 void	free4yourlife(t_data *data)

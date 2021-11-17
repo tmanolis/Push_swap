@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_more_than_5_args.c                            :+:      :+:    :+:   */
+/*   split_and_push.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 15:53:51 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/28 19:51:29 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/17 18:23:14 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,17 @@ long int	find_median(t_data *data)
 	return (median);
 }
 
-void	split_and_push(t_data *data)
+void	split_a_and_push(t_data *data)
 {
 	size_t		i;
+	size_t		count_ra;
 	size_t		len;
 	long int	median;
 	t_list		*tmp;
-	t_list		*tmp_b_next;
+	// t_list		*tmp_b_next;
 
 	i = 0;
+	count_ra = 0;
 	len = ft_lstsize(data->lst_a);
 	median = find_median(data);
 	while (i < len)
@@ -82,21 +84,39 @@ void	split_and_push(t_data *data)
 		tmp = data->lst_a;
 		if (tmp->content < median)
 			push_b(data);
-		else if (i < len - 1)
+		else
 		{
-			if (data->lst_b && data->lst_b->next != NULL) 
-			{	
-				tmp_b_next = data->lst_b->next;
-				if (data->lst_b->content < tmp_b_next->content)
-					rotate_both(data);
-				else
-					rotate_a(data);
-			}
-			else
-				rotate_a(data);
+			rotate_a(data);
+			count_ra++;
 		}
 		i++;
 	}
 	printf("len : %ld\n", len);
 	printf("i : %ld\n", i);
+	if ((len = data->len && len != 0) && (check_args_not_sorted(data) == FAILURE))
+		return (0);
+	else
+
 }
+
+// Optimisation du rr : (la boucle while avant que je la modifie)
+//while (i < len)
+	// {
+	// 	tmp = data->lst_a;
+	// 	if (tmp->content < median)
+	// 		push_b(data);
+	// 	else if (i < len - 1)
+	// 	{
+	// 		if (data->lst_b && data->lst_b->next != NULL) 
+	// 		{	
+	// 			tmp_b_next = data->lst_b->next;
+	// 			if (data->lst_b->content < tmp_b_next->content)
+	// 				rotate_both(data);
+	// 			else
+	// 				rotate_a(data);
+	// 		}
+	// 		else
+	// 			rotate_a(data);
+	// 	}
+	// 	i++;
+	// }

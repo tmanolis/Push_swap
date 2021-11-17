@@ -63,6 +63,6 @@ int	main(int argc, char **argv)
 	decide_what_to_do(data, argc);
 	display_stack(data);
 	free4yourlife(data);
-	atexit(f);
+	// atexit(f);
 	return (1);
 }
