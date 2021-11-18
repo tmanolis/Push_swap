@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 15:53:51 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/17 18:23:14 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/18 19:12:20 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,61 +62,35 @@ long int	find_median(t_data *data)
 	if (!(len % 2))
 		len++;
 	median = data->array_tmp[len / 2];
-	printf("median : %ld\n", median);
+	// printf("median : %ld\n", median);
 	return (median);
 }
 
-void	split_a_and_push(t_data *data)
+void	split_and_push(t_data *data, long int smallest_nb, long int biggest_nb)
 {
 	size_t		i;
 	size_t		count_ra;
 	size_t		len;
 	long int	median;
 	t_list		*tmp;
-	// t_list		*tmp_b_next;
 
 	i = 0;
 	count_ra = 0;
 	len = ft_lstsize(data->lst_a);
 	median = find_median(data);
+	if (smallest_nb >= biggest_nb)
+		return;
 	while (i < len)
 	{
 		tmp = data->lst_a;
-		if (tmp->content < median)
-			push_b(data);
-		else
+		if (tmp->content > median)
 		{
 			rotate_a(data);
 			count_ra++;
 		}
+		else
+			push_b(data);
 		i++;
 	}
-	printf("len : %ld\n", len);
-	printf("i : %ld\n", i);
-	if ((len = data->len && len != 0) && (check_args_not_sorted(data) == FAILURE))
-		return (0);
-	else
-
+	split_and_push(data, (median + 1), biggest_nb);
 }
-
-// Optimisation du rr : (la boucle while avant que je la modifie)
-//while (i < len)
-	// {
-	// 	tmp = data->lst_a;
-	// 	if (tmp->content < median)
-	// 		push_b(data);
-	// 	else if (i < len - 1)
-	// 	{
-	// 		if (data->lst_b && data->lst_b->next != NULL) 
-	// 		{	
-	// 			tmp_b_next = data->lst_b->next;
-	// 			if (data->lst_b->content < tmp_b_next->content)
-	// 				rotate_both(data);
-	// 			else
-	// 				rotate_a(data);
-	// 		}
-	// 		else
-	// 			rotate_a(data);
-	// 	}
-	// 	i++;
-	// }

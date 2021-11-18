@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:31:04 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/17 18:15:51 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/18 17:19:47 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,14 @@ t_list	*find_smallest_nod(t_data *data);
 void	sort_4_args(t_data *data);
 // ALGORITHM --- sort_5_args
 void	sort_5_args(t_data *data);
-// ALGORITHM/BIG_ARGS_SET --- push_back_and_sort
-void	push_back_and_sort(t_data *data);
 // ALGORITHM/BIG_ARGS_SET --- sort_big_set
+long int	find_median(t_data *data);
+void	sort_array(long int *array, int len);
 void	sort_big_set(t_data *data);
+// ALGORITHM/BIG_ARGS_SET --- sort_medium_set
+void	sort_medium_set(t_data *data);
 // ALGORITHM/BIG_ARGS_SET --- split_and_push
-void	split_a_and_push(t_data *data);
+void	split_and_push(t_data *data, long int smallest_nb, long int biggest_nb);
 // OPERATIONS --- push
 void	push_a(t_data *data);
 void	push_b(t_data *data);
