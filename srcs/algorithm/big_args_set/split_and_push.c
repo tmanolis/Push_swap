@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 15:53:51 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/22 15:12:42 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/22 15:21:58 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	split_b_and_push(t_data *data, long int smallest_nb, long int biggest_nb)
 	i = 0;
 	count_rb = 0;
 	len = ft_lstsize(data->lst_b);
-	median = find_median_b(data);
+	median = find_median(data, data->lst_b);
 	if ((smallest_nb >= median) || (median >= biggest_nb))
 		return;
 	while (i < len)
@@ -67,7 +67,7 @@ void	split_and_push(t_data *data, long int smallest_nb, long int biggest_nb)
 	i = 0;
 	count_ra = 0;
 	len = ft_lstsize(data->lst_a);
-	median = find_median(data);
+	median = find_median(data, data->lst_a);
 	printf("median : %ld\n", median);
 	printf("biggest nb : %ld\n", biggest_nb);
 	if ((smallest_nb >= median) || (median >= biggest_nb))

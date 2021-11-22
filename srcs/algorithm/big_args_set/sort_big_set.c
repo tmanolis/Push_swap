@@ -6,31 +6,11 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:59:47 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/18 19:12:30 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/22 15:23:10 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../push_swap.h"
-
-#include <stdio.h>
-void	display_stack(t_data *data);
-
-// void	sort_big_set(t_data *data)
-// {
-//     size_t len;
-
-//     len = ft_lstsize(data->lst_a);
-//     while (len > 3)
-//     {
-//         split_a_and_push(data);
-//         display_stack(data);
-//         len = ft_lstsize(data->lst_a);
-//     }
-//     if (len > 2)
-//         sort_3_args(data);
-//     else
-//         sort_2_args(data);
-// }
 
 long int	find_smallest_number(t_data *data)
 {
