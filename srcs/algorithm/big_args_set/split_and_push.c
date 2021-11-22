@@ -6,64 +6,54 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 15:53:51 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/18 19:12:20 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/22 15:12:42 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../push_swap.h"
+
 #include <stdio.h>
+void	display_stack(t_data *data);
 
-void	sort_array(long int *array, int len)
+void	compensate_rotate(t_data *data, size_t count, void (*f)(t_data *))
 {
-	int			i;
-	int			j;
-	long int	tmp;
-
-	i = 0;
-	while (i < len)
+	while (count)
 	{
-		j = i + 1;
-		while (j < len)
-		{
-			if (array[i] > array[j])
-			{
-				tmp = array[i];
-				array[i] = array[j];
-				array[j] = tmp;
-			}
-			j++;
-		}
-		i++;
+		f(data);
+		count--;
 	}
 }
 
-long int	find_median(t_data *data)
+void	split_b_and_push(t_data *data, long int smallest_nb, long int biggest_nb)
 {
-	int			i;
-	int			len;
+	size_t		i;
+	size_t		count_rb;
+	size_t		len;
 	long int	median;
 	t_list		*tmp;
 
 	i = 0;
-	len = ft_lstsize(data->lst_a);
-	if (data->array_tmp)
-		free(data->array_tmp);
-	data->array_tmp = (long int *)malloc(sizeof(long int) * len);
-	if (!data->array_tmp)
-		return (0);
-	tmp = data->lst_a;
-	while (tmp && (i < len))
+	count_rb = 0;
+	len = ft_lstsize(data->lst_b);
+	median = find_median_b(data);
+	if ((smallest_nb >= median) || (median >= biggest_nb))
+		return;
+	while (i < len)
 	{
-		data->array_tmp[i] = tmp->content;
-		tmp = tmp->next;
+		tmp = data->lst_b;
+		if (tmp->content <= median)
+		{
+			rotate_b(data);
+			count_rb++;
+		}
+		else
+			push_a(data);
 		i++;
 	}
-	sort_array(data->array_tmp, len);
-	if (!(len % 2))
-		len++;
-	median = data->array_tmp[len / 2];
-	// printf("median : %ld\n", median);
-	return (median);
+	compensate_rotate(data, count_rb, &reverse_rotate_b);
+	display_stack(data);
+	split_and_push(data, median, biggest_nb);
+	split_b_and_push(data, smallest_nb, (median));
 }
 
 void	split_and_push(t_data *data, long int smallest_nb, long int biggest_nb)
@@ -78,12 +68,17 @@ void	split_and_push(t_data *data, long int smallest_nb, long int biggest_nb)
 	count_ra = 0;
 	len = ft_lstsize(data->lst_a);
 	median = find_median(data);
-	if (smallest_nb >= biggest_nb)
+	printf("median : %ld\n", median);
+	printf("biggest nb : %ld\n", biggest_nb);
+	if ((smallest_nb >= median) || (median >= biggest_nb))
+	{
+		printf("ICI\n");
 		return;
+	}
 	while (i < len)
 	{
 		tmp = data->lst_a;
-		if (tmp->content > median)
+		if (tmp->content >= median)
 		{
 			rotate_a(data);
 			count_ra++;
@@ -92,5 +87,8 @@ void	split_and_push(t_data *data, long int smallest_nb, long int biggest_nb)
 			push_b(data);
 		i++;
 	}
-	split_and_push(data, (median + 1), biggest_nb);
+	compensate_rotate(data, count_ra, &reverse_rotate_a);
+	display_stack(data);
+	split_and_push(data, median, biggest_nb);
+	split_b_and_push(data, smallest_nb, median);
 }
