@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:27:13 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/22 15:29:26 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/23 13:29:37 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int find_index(long int number, t_list *lst)
 	return (index);
 }
 
-void	proximity(long int number, t_data *data)
+void	ra_or_rra(long int number, t_data *data)
 {
 	int	index;
 	int	proximity;
