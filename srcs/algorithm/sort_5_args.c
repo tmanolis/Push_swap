@@ -6,11 +6,11 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 16:59:16 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/26 17:12:07 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:01:21 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "push_swap.h"
 
 void	switch_smallest_at_the_top_of_5(t_data *data)
 {

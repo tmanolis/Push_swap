@@ -6,11 +6,11 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:59:47 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/23 14:20:06 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/23 20:07:33 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../push_swap.h"
+#include "push_swap.h"
 
 long int	find_biggest_number(t_list *lst)
 {
@@ -30,8 +30,10 @@ long int	find_biggest_number(t_list *lst)
 
 void	sort_big_set(t_data *data)
 {
-	long int    biggest_nb;
+	int			key_index;
+	long int    key_nbr;
 
-	biggest_nb = find_biggest_number(data->lst_a);
-	// split_and_push(data, smallest_nb, biggest_nb);
+	key_index = ft_lstsize(data->lst_a) / 4;
+	key_nbr = find_key_number(data, data->lst_a, key_index);
+	split_and_push(data, key_nbr);
 }

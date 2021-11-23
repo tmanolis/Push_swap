@@ -6,11 +6,11 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 12:08:59 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/26 15:25:58 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:01:21 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "push_swap.h"
 
 void	swap_a(t_data *data)
 {

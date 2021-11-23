@@ -6,11 +6,11 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:27:13 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/23 13:29:37 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:07:11 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../push_swap.h"
+#include "push_swap.h"
 
 int find_index(long int number, t_list *lst)
 {

@@ -6,11 +6,11 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 11:21:57 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/26 15:26:58 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:01:21 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "push_swap.h"
 
 t_list	*find_biggest_nod(t_data *data)
 {

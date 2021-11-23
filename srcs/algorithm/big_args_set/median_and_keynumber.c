@@ -6,11 +6,11 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:12:04 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/23 14:18:30 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:07:11 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../push_swap.h"
+#include "push_swap.h"
 
 void	sort_array(long int *array, int len)
 {

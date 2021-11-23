@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:31:04 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/23 14:05:13 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/23 20:02:43 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define SUCCESS 1
 # define FAILURE 0
 
-# include "./Libft/libft.h"
+# include "../Libft/libft.h"
 # include <unistd.h>
 # include <limits.h>
 
@@ -49,7 +49,7 @@ void		sort_big_set(t_data *data);
 // ALGORITHM/BIG_ARGS_SET --- sort_medium_set
 void		sort_medium_set(t_data *data);
 // ALGORITHM/BIG_ARGS_SET --- split_and_push
-void		split_and_push(t_data *data, long int smallest_nb, long int biggest_nb);
+void	split_and_push(t_data *data, long int key_nbr);
 // OPERATIONS --- push
 void		push_a(t_data *data);
 void		push_b(t_data *data);

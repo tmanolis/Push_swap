@@ -6,11 +6,11 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 15:20:13 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/10/26 17:08:55 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:01:21 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "push_swap.h"
 
 t_list	*find_smallest_nod(t_data *data)
 {

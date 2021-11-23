@@ -21,11 +21,14 @@ SRCS = algorithm/sort_2_args.c							\
 		
 OBJS = $(addprefix $(SRCS_DIR), $(SRCS:.c=.o))
 
+# *--------- INCLUDES ---------* 
+
+INCLUDES_DIR = -I includes/header
+
 # *--------- Libft ---------* 
 
-LIBFT_DIR = Libft
-LIBFT_PATH = ./Libft
-LFLAGS = -L$(LIBFT_PATH) -lft
+LIBFT_DIR = ./includes/Libft
+LIBFT_FLAGS = -L$(LIBFT_DIR) -lft
 
 # *--------- OTHERS ---------*
 
@@ -36,25 +39,23 @@ RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror
 
-# .c.o:
-# 			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
-
 # *========= RULES =========*
 
 all:		$(NAME)
-			
-$(NAME):	$(OBJS)
-			@make -C $(LIBFT_DIR)
-	        $(CC) $(CFLAGS) $(OBJS) main.c $(LFLAGS) -o $(NAME)
 
-# $(MAKE_LIBFT): @make -c $(LIBFT_PATH)
+%.o : %.c
+	$(CC) $(CFLAGS) -o $@ -c $< $(INCLUDES_DIR) 
+
+$(NAME):	$(OBJS)
+			make -C $(LIBFT_DIR)
+	        $(CC) $(CFLAGS) $(OBJS) main.c $(LIBFT_FLAGS) $(INCLUDES_DIR) -o $(NAME)
 
 clean:		
-			@cd $(LIBFT_PATH) && $(MAKE) clean
+			make -C $(LIBFT_DIR) clean
 			$(RM) $(OBJS)
 
 fclean:		clean
-			@cd $(LIBFT_PATH) && $(MAKE) fclean
+			make -C $(LIBFT_DIR) fclean
 			$(RM) $(NAME) 
 
 re:			fclean all
