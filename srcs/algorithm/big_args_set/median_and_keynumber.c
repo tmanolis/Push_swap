@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:12:04 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/23 18:07:11 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/24 11:58:46 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ long int	find_key_number(t_data *data, t_list *lst, int key_index)
 	long int	key_nbr;
 	t_list		*tmp;
 
-	i = 0;
+	i = 1;
 	len = ft_lstsize(lst);
 	if (data->array_tmp)
 		free(data->array_tmp);

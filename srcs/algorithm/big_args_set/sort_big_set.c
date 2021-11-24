@@ -6,11 +6,12 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:59:47 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/23 20:07:33 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/24 12:00:04 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 long int	find_biggest_number(t_list *lst)
 {
@@ -35,5 +36,6 @@ void	sort_big_set(t_data *data)
 
 	key_index = ft_lstsize(data->lst_a) / 4;
 	key_nbr = find_key_number(data, data->lst_a, key_index);
+	// printf("key number : %ld\n", key_nbr);
 	split_and_push(data, key_nbr);
 }
