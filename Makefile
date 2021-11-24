@@ -5,7 +5,7 @@ SRCS = algorithm/sort_2_args.c							\
 	algorithm/sort_3_args.c								\
 	algorithm/sort_4_args.c								\
 	algorithm/sort_5_args.c								\
-	algorithm/sort_10_args.c							\
+	algorithm/sort_medium_set.c							\
 	algorithm//big_args_set/median_and_keynumber.c		\
 	algorithm//big_args_set/proximity.c					\
 	algorithm/big_args_set/sort_big_set.c				\

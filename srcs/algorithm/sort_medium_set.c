@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_10_args.c                                     :+:      :+:    :+:   */
+/*   sort_medium_set.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:49:40 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/23 18:01:21 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/24 14:02:48 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,15 @@ long int	find_smallest_number(t_list *lst)
 	return (smallest_nb);
 }
 
-void	sort_10_args(t_data *data)
+void	sort_medium_set(t_data *data)
 {
 	size_t		i;
+	size_t		len;
 	long int	smallest_nb;
 	t_list		*next_nod;
 
 	i = 0;
+	len = ft_lstsize(data->lst_a);
 	while (ft_lstsize(data->lst_a) > 3)
 	{
 		smallest_nb = find_smallest_number(data->lst_a);
@@ -46,6 +48,9 @@ void	sort_10_args(t_data *data)
 		push_b(data);
 	}
 	sort_3_args(data);
-	while (ft_lstsize(data->lst_b))
+	while (i < (len - 3))
+	{
 		push_a(data);
+		i++;
+	}
 }
