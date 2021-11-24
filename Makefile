@@ -37,7 +37,7 @@ NAME = push_swap
 CC = clang
 RM = rm -f
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 
 # *========= RULES =========*
 

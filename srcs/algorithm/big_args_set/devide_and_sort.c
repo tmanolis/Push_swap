@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 15:53:51 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/24 15:30:41 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/24 18:01:54 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	split_and_push(t_data *data, long int key_nbr)
 	i = 0;
 	len = ft_lstsize(data->lst_a);
 	tmp = data->lst_a;
-	while (i < len)
+	while (i < len) // CA MERDE ICI
 	{
 		// printf("tmp content : %ld\n", tmp->content);
 		next_nod = data->lst_a->next;
