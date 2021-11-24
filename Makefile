@@ -6,10 +6,10 @@ SRCS = algorithm/sort_2_args.c							\
 	algorithm/sort_4_args.c								\
 	algorithm/sort_5_args.c								\
 	algorithm/sort_medium_set.c							\
+	algorithm/big_args_set/devide_and_sort.c			\
 	algorithm//big_args_set/median_and_keynumber.c		\
 	algorithm//big_args_set/proximity.c					\
 	algorithm/big_args_set/sort_big_set.c				\
-	algorithm/big_args_set/split_and_push.c				\
 	operations/push.c									\
 	operations/rotate.c									\
 	operations/reverse_rotate.c							\

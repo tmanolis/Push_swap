@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 16:28:26 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/24 14:14:31 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:37:01 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	main(int argc, char **argv)
 	if (check_all_errors(data, argc, argv) == FAILURE)
 		return (0);
 	decide_what_to_do(data, argc);
-	display_stack(data);
+	// display_stack(data);
 	free4yourlife(data);
 	// atexit(f);
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:31:04 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/24 14:02:17 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:44:46 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,20 @@ t_list		*find_smallest_nod(t_data *data);
 void		sort_4_args(t_data *data);
 // ALGORITHM --- sort_5_args
 void		sort_5_args(t_data *data);
-// ALGORITHM --- sort_10_args
-void	sort_medium_set(t_data *data);
+// ALGORITHM --- sort_medium_set
+void		sort_medium_set(t_data *data);
+// ALGORITHM/BIG_ARGS_SET --- devide_and_sort
+void		split_and_push(t_data *data, long int key_nbr);
+void		sort_b(t_data *data);
 // ALGORITHM/BIG_ARGS_SET --- median_and_keynumber
 long int	find_median(t_data *data, t_list *lst);
 long int	find_key_number(t_data *data, t_list *lst, int key_index);
 // ALGORITHM/BIG_ARGS_SET --- proximity
+void		compensate_rotate(t_data *data, size_t count, void (*f)(t_data *));
 void		ra_or_rra(long int number, t_data *data);
+void		rb_or_rrb(long int number, t_data *data);
 // ALGORITHM/BIG_ARGS_SET --- sort_big_set
-void		sort_big_set(t_data *data);
-// ALGORITHM/BIG_ARGS_SET --- sort_medium_set
-void		sort_medium_set(t_data *data);
-// ALGORITHM/BIG_ARGS_SET --- split_and_push
-void	split_and_push(t_data *data, long int key_nbr);
+void		sort_big_set(t_data *data, int argc);
 // OPERATIONS --- push
 void		push_a(t_data *data);
 void		push_b(t_data *data);

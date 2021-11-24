@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 14:54:12 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/24 14:04:01 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:43:16 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ void	apply_algorithm(t_data *data, int argc)
 		sort_4_args(data);
 	if (argc == 6)
 		sort_5_args(data);
-	if (argc > 6 && argc < 101)
+	if (argc > 6 && argc < 51)
 		sort_medium_set(data);
-	if (argc > 100)
-		sort_big_set(data);
+	if (argc > 50)
+		sort_big_set(data, argc);
 }
 
 void	decide_what_to_do(t_data *data, int argc)
