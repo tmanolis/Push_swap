@@ -1,7 +1,8 @@
 # *--------- SOURCES ---------* 
 
 SRCS_DIR = ./srcs/
-SRCS = algorithm/sort_2_args.c							\
+SRCS = main.c											\
+	algorithm/sort_2_args.c								\
 	algorithm/sort_3_args.c								\
 	algorithm/sort_4_args.c								\
 	algorithm/sort_5_args.c								\
@@ -48,7 +49,7 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			make -C $(LIBFT_DIR)
-	        $(CC) $(CFLAGS) $(OBJS) main.c $(LIBFT_FLAGS) $(INCLUDES_DIR) -o $(NAME)
+	        $(CC) $(CFLAGS) $(OBJS) $(LIBFT_FLAGS) $(INCLUDES_DIR) -o $(NAME)
 
 clean:		
 			make -C $(LIBFT_DIR) clean

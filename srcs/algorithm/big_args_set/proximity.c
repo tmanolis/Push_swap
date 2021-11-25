@@ -6,16 +6,16 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:27:13 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/25 14:07:06 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/25 14:41:28 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int find_index(long int number, t_list *lst)
+int	find_index(long int number, t_list *lst)
 {
-	int     index;
-	t_list  *tmp;
+	int		index;
+	t_list	*tmp;
 
 	index = 0;
 	tmp = lst;
@@ -68,5 +68,5 @@ void	sa_or_ss(t_data *data)
 			swap_a(data);
 	}
 	else
-	swap_a(data);
+		swap_a(data);
 }

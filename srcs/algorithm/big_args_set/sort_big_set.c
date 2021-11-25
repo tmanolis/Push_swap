@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:59:47 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/25 14:06:32 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/25 14:42:15 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	sort_big_set(t_data *data, int argc)
 {
 	int			key_index;
-	long int    key_nbr;
+	long int	key_nbr;
 
-	if (argc < 501) 
+	if (argc < 501)
 		key_index = ft_lstsize(data->lst_a) / 5;
 	else
 		key_index = ft_lstsize(data->lst_a) / 13;

@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:49:40 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/25 13:57:01 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/25 14:39:07 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	sort_medium_set(t_data *data)
 		next_nod = data->lst_a->next;
 		if (smallest_nb == next_nod->content)
 			swap_a(data);
-		while(data->lst_a->content != smallest_nb)
-				ra_or_rra(smallest_nb, data);
+		while (data->lst_a->content != smallest_nb)
+			ra_or_rra(smallest_nb, data);
 		push_b(data);
 		i++;
 	}

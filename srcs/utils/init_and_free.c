@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 17:41:35 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/23 18:01:21 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/25 14:47:42 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	init_struct(t_data *data, int argc)
 void	lstclear(t_list *lst)
 {
 	void	*tmp;
-	
+
 	while (lst != NULL)
 	{
 		tmp = lst->next;

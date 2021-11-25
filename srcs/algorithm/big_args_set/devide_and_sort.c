@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 15:53:51 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/25 14:06:22 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/25 14:40:21 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	split_and_push(t_data *data, long int key_nbr, int key_index)
 		next_nod = data->lst_a->next;
 		if (tmp->content <= key_nbr)
 		{
-			while(data->lst_a->content != tmp->content)
+			while (data->lst_a->content != tmp->content)
 				ra_or_rra(tmp->content, data);
 			push_b(data);
 			tmp = data->lst_a;
@@ -70,7 +70,7 @@ void	sort_b(t_data *data)
 		next_nod = data->lst_b->next;
 		if (biggest_nb == next_nod->content)
 			swap_b(data);
-		while(data->lst_b->content != biggest_nb)
+		while (data->lst_b->content != biggest_nb)
 			rb_or_rrb(biggest_nb, data);
 		push_a(data);
 	}
