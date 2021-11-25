@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:49:40 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/25 11:56:13 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/25 13:57:01 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	sort_medium_set(t_data *data)
 		i++;
 	}
 	sort_3_args(data);
-	while (i)
+	while (i > 1)
 	{
 		push_a(data);
 		i--;

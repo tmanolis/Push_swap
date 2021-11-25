@@ -53,3 +53,7 @@ dkms.conf
 
 # Executable
 push_swap
+checker
+
+# Directories
+push_swap_tester

@@ -6,13 +6,11 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 15:53:51 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/25 12:14:22 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/25 14:06:22 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-#include <stdio.h>
 
 void	split_and_push(t_data *data, long int key_nbr, int key_index)
 {
@@ -24,9 +22,7 @@ void	split_and_push(t_data *data, long int key_nbr, int key_index)
 	tmp = data->lst_a;
 	while (ft_lstsize(data->lst_b) != wanted_len && ft_lstsize(data->lst_a) > 3)
 	{
-		// printf("tmp content : %ld\n", tmp->content);
 		next_nod = data->lst_a->next;
-		// printf("next content : %ld\n", next_nod->content);
 		if (tmp->content <= key_nbr)
 		{
 			while(data->lst_a->content != tmp->content)
@@ -36,9 +32,9 @@ void	split_and_push(t_data *data, long int key_nbr, int key_index)
 		}
 		else if (next_nod->content <= key_nbr)
 		{
-			swap_a(data);
-			tmp = next_nod->next;
+			sa_or_ss(data);
 			push_b(data);
+			tmp = data->lst_a;
 		}
 		else
 			tmp = tmp->next;
@@ -80,28 +76,3 @@ void	sort_b(t_data *data)
 	}
 	push_a(data);
 }
-
-// void	sort_b(t_data *data)
-// {
-// 	size_t		count;
-// 	long int	biggest_nb;
-// 	t_list		*next_nod;
-
-// 	while (ft_lstsize(data->lst_b) > 1)
-// 	{
-// 		count = 0;
-// 		biggest_nb = find_biggest_number(data->lst_b);
-// 		next_nod = data->lst_b->next;
-// 		if (biggest_nb == next_nod->content)
-// 			swap_b(data);
-// 		while(data->lst_b->content != biggest_nb)
-// 		{
-// 				rotate_b(data);
-// 				count ++;
-// 		}
-// 		push_a(data);
-// 		if (count && (ft_lstsize(data->lst_b) > 2))
-// 			compensate_rotate(data, count, &reverse_rotate_b);
-// 	}
-// 	push_a(data);
-// }

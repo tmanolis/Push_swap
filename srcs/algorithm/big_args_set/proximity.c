@@ -6,20 +6,11 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:27:13 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/24 15:31:13 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/25 14:07:06 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	compensate_rotate(t_data *data, size_t count, void (*f)(t_data *))
-{
-	while (count)
-	{
-		f(data);
-		count--;
-	}
-}
 
 int find_index(long int number, t_list *lst)
 {
@@ -62,4 +53,20 @@ void	rb_or_rrb(long int number, t_data *data)
 		rotate_b(data);
 	else
 		reverse_rotate_b(data);
+}
+
+void	sa_or_ss(t_data *data)
+{
+	t_list	*next_nod;
+
+	if (ft_lstsize(data->lst_b) >= 2)
+	{
+		next_nod = data->lst_b->next;
+		if (next_nod->content > data->lst_b->content)
+			swap_both(data);
+		else
+			swap_a(data);
+	}
+	else
+	swap_a(data);
 }

@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:31:04 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/25 10:50:20 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/25 14:07:18 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ void		sort_b(t_data *data);
 long int	find_median(t_data *data, t_list *lst);
 long int	find_key_number(t_data *data, t_list *lst, int key_index);
 // ALGORITHM/BIG_ARGS_SET --- proximity
-void		compensate_rotate(t_data *data, size_t count, void (*f)(t_data *));
 void		ra_or_rra(long int number, t_data *data);
 void		rb_or_rrb(long int number, t_data *data);
+void		sa_or_ss(t_data *data);
 // ALGORITHM/BIG_ARGS_SET --- sort_big_set
 void		sort_big_set(t_data *data, int argc);
 // OPERATIONS --- push
