@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 15:53:51 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/24 18:01:54 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/25 12:14:22 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 #include <stdio.h>
 
-void	split_and_push(t_data *data, long int key_nbr)
+void	split_and_push(t_data *data, long int key_nbr, int key_index)
 {
-	size_t		i;
-	size_t		len;
+	int			wanted_len;
 	t_list		*tmp;
 	t_list		*next_nod;
 
-	i = 0;
-	len = ft_lstsize(data->lst_a);
+	wanted_len = ft_lstsize(data->lst_b) + key_index;
 	tmp = data->lst_a;
-	while (i < len) // CA MERDE ICI
+	while (ft_lstsize(data->lst_b) != wanted_len && ft_lstsize(data->lst_a) > 3)
 	{
 		// printf("tmp content : %ld\n", tmp->content);
 		next_nod = data->lst_a->next;
@@ -44,7 +42,6 @@ void	split_and_push(t_data *data, long int key_nbr)
 		}
 		else
 			tmp = tmp->next;
-		i++;
 	}
 }
 

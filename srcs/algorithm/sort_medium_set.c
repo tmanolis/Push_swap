@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:49:40 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/24 14:02:48 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/25 11:56:13 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,10 @@ long int	find_smallest_number(t_list *lst)
 void	sort_medium_set(t_data *data)
 {
 	size_t		i;
-	size_t		len;
 	long int	smallest_nb;
 	t_list		*next_nod;
 
 	i = 0;
-	len = ft_lstsize(data->lst_a);
 	while (ft_lstsize(data->lst_a) > 3)
 	{
 		smallest_nb = find_smallest_number(data->lst_a);
@@ -46,11 +44,12 @@ void	sort_medium_set(t_data *data)
 		while(data->lst_a->content != smallest_nb)
 				ra_or_rra(smallest_nb, data);
 		push_b(data);
+		i++;
 	}
 	sort_3_args(data);
-	while (i < (len - 3))
+	while (i)
 	{
 		push_a(data);
-		i++;
+		i--;
 	}
 }

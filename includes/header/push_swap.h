@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:31:04 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/24 18:02:05 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/25 10:50:20 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void		sort_5_args(t_data *data);
 // ALGORITHM --- sort_medium_set
 void		sort_medium_set(t_data *data);
 // ALGORITHM/BIG_ARGS_SET --- devide_and_sort
-void	split_and_push(t_data *data, long int key_nbr);
+void		split_and_push(t_data *data, long int key_nbr, int key_index);
 void		sort_b(t_data *data);
 // ALGORITHM/BIG_ARGS_SET --- median_and_keynumber
 long int	find_median(t_data *data, t_list *lst);
