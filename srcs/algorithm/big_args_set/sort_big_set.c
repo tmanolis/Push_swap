@@ -23,7 +23,7 @@ void	sort_big_set(t_data *data, int argc)
 	if (argc < 501)
 		key_index = ft_lstsize(data->lst_a) / 5;
 	else
-		key_index = ft_lstsize(data->lst_a) / 10;
+		key_index = ft_lstsize(data->lst_a) / 13;
 	while (ft_lstsize(data->lst_a) > key_index && ft_lstsize(data->lst_a) > 3)
 	{
 		key_nbr = find_key_number(data, data->lst_a, key_index);

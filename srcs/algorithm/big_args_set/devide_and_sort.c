@@ -30,12 +30,12 @@ void	split_and_push(t_data *data, long int key_nbr, int key_index)
 			push_b(data);
 			tmp = data->lst_a;
 		}
-		else if (next_nod->content <= key_nbr)
-		{
-			sa_or_ss(data);
-			push_b(data);
-			tmp = data->lst_a;
-		}
+		// else if (next_nod->content <= key_nbr)
+		// {
+		// 	sa_or_ss(data);
+		// 	push_b(data);
+		// 	tmp = data->lst_a;
+		// }
 		else
 			tmp = tmp->next;
 	}
@@ -52,8 +52,8 @@ void	sort_a(t_data *data)
 	{
 		smallest_nb = find_smallest_number(data->lst_a);
 		next_nod = data->lst_a->next;
-		if (smallest_nb == next_nod->content)
-			swap_a(data);
+		// if (smallest_nb == next_nod->content)
+		// 	swap_a(data);
 		while (data->lst_a->content != smallest_nb)
 			ra_or_rra(smallest_nb, data);
 		push_b(data);
@@ -89,8 +89,8 @@ void	sort_b(t_data *data)
 		count = 0;
 		biggest_nb = find_biggest_number(data->lst_b);
 		next_nod = data->lst_b->next;
-		if (biggest_nb == next_nod->content)
-			swap_b(data);
+		// if (biggest_nb == next_nod->content)
+		// 	swap_b(data);
 		while (data->lst_b->content != biggest_nb)
 			rb_or_rrb(biggest_nb, data);
 		push_a(data);

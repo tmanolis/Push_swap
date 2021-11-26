@@ -22,13 +22,31 @@ int	arg_isdigit(int argc, char **argv)
 	{
 		character = 0;
 		if (argv[i][character] == '-' || argv[i][character] == '+')
+		{
+			if (ft_isdigit(argv[i][character + 1]) == FAILURE)
+				return (FAILURE);
 			character++;
+		}
 		while (argv[i][character] != '\0')
 		{
 			if (ft_isdigit(argv[i][character]) == FAILURE)
 				return (FAILURE);
 			character++;
 		}
+		i++;
+	}
+	return (SUCCESS);
+}
+
+int	len_of_arg(int argc, char **argv)
+{
+	int i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (ft_strlen(argv[i]) > 11)
+			return (FAILURE);
 		i++;
 	}
 	return (SUCCESS);
@@ -85,7 +103,8 @@ int	check_all_errors(t_data *data, int argc, char **argv)
 {
 	if (argc == 1)
 		return (FAILURE);
-	else if (arg_isdigit(argc, argv) == FAILURE)
+	else if (arg_isdigit(argc, argv) == FAILURE
+		|| len_of_arg(argc, argv) == FAILURE)
 	{
 		write(2, "Error\n", 6);
 		return (FAILURE);
