@@ -21,6 +21,8 @@ int	arg_isdigit(int argc, char **argv)
 	while (i < argc)
 	{
 		character = 0;
+		if (argv[i][character] == '\0')
+			return (FAILURE);
 		if (argv[i][character] == '-' || argv[i][character] == '+')
 		{
 			if (ft_isdigit(argv[i][character + 1]) == FAILURE)
