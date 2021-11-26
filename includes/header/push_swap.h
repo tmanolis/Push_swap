@@ -45,6 +45,7 @@ void		split_and_push(t_data *data, long int key_nbr, int key_index);
 void		sort_a(t_data *data);
 void		sort_b(t_data *data);
 // ALGORITHM/BIG_ARGS_SET --- median_and_keynumber
+void 		get_an_array(t_data *data, t_list *lst);
 long int	find_median(t_data *data, t_list *lst);
 long int	find_key_number(t_data *data, t_list *lst, int key_index);
 // ALGORITHM/BIG_ARGS_SET --- proximity

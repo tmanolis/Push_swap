@@ -29,8 +29,6 @@ void	sort_big_set(t_data *data, int argc)
 		key_nbr = find_key_number(data, data->lst_a, key_index);
 		split_and_push(data, key_nbr, key_index);
 	}
-	// display_stack(data);
 	sort_a(data);
-	// display_stack(data);
 	sort_b(data);
 }

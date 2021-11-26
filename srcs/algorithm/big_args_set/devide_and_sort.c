@@ -12,6 +12,9 @@
 
 #include "push_swap.h"
 
+#include <stdio.h>
+void    display_stack(t_data *data);
+
 void	split_and_push(t_data *data, long int key_nbr, int key_index)
 {
 	int			wanted_len;
@@ -40,6 +43,60 @@ void	split_and_push(t_data *data, long int key_nbr, int key_index)
 			tmp = tmp->next;
 	}
 }
+
+// int	start_by_the_top(t_data *data, long int key_nbr)
+// {
+// 	int i;
+// 	int top;
+// 	int bottom;
+
+// 	i = 0;
+// 	top = 0;
+// 	bottom = 0;
+// 	get_an_array(data, data->lst_a);
+// 	// printf("key nbr : %ld\n", key_nbr);
+// 	// printf("nb du tableau : %ld\n", data->array_tmp[i]);
+// 	while (data->array_tmp[i] > key_nbr)
+// 	{
+// 		top++;
+// 		i++;
+// 	}
+// 	i = ft_lstsize(data->lst_a) - 1;
+// 	// printf("nb du tableau : %ld\n", data->array_tmp[i]);
+// 	while (data->array_tmp[i] > key_nbr)
+// 	{
+// 		bottom++;
+// 		i--;
+// 	}
+// 	// printf("top : %d\n", top);
+// 	// printf("bottom : %d\n", bottom);
+// 	if (top <= bottom)
+// 		return (SUCCESS);
+// 	else
+// 		return (FAILURE);
+// }
+
+// void	split_and_push(t_data *data, long int key_nbr, int key_index)
+// {
+// 	int			wanted_len;
+
+// 	wanted_len = ft_lstsize(data->lst_b) + key_index;
+// 	while (ft_lstsize(data->lst_b) != wanted_len && ft_lstsize(data->lst_a) > 3)
+// 	{
+// 		if (start_by_the_top(data, key_nbr) == SUCCESS)
+// 		{
+// 			while (data->lst_a->content > key_nbr)
+// 				rotate_a(data);
+// 			push_b(data);
+// 		}
+// 		else
+// 		{
+// 			while (data->lst_a->content > key_nbr)
+// 				reverse_rotate_a(data);
+// 			push_b(data);
+// 		}
+// 	}
+// }
 
 void	sort_a(t_data *data)
 {

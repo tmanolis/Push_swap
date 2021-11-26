@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+#include <stdio.h>
+
 void	sort_array(long int *array, int len)
 {
 	int			i;
@@ -71,7 +73,7 @@ long int	find_key_number(t_data *data, t_list *lst, int key_index)
 	long int	key_nbr;
 	t_list		*tmp;
 
-	i = 1;
+	i = 0;
 	len = ft_lstsize(lst);
 	if (data->array_tmp)
 		free(data->array_tmp);
@@ -88,4 +90,26 @@ long int	find_key_number(t_data *data, t_list *lst, int key_index)
 	sort_array(data->array_tmp, len);
 	key_nbr = data->array_tmp[key_index];
 	return (key_nbr);
+}
+
+void get_an_array(t_data *data, t_list *lst)
+{
+	int			i;
+	int			len;
+	t_list		*tmp;
+
+	i = 0;
+	len = ft_lstsize(lst);
+	if (data->array_tmp)
+		free(data->array_tmp);
+	data->array_tmp = (long int *)malloc(sizeof(long int) * len);
+	if (!data->array_tmp)
+		return ;
+	tmp = lst;
+	while (tmp && (i < len))
+	{
+		data->array_tmp[i] = tmp->content;
+		tmp = tmp->next;
+		i++;
+	}
 }
