@@ -38,9 +38,11 @@ void		sort_4_args(t_data *data);
 // ALGORITHM --- sort_5_args
 void		sort_5_args(t_data *data);
 // ALGORITHM --- sort_medium_set
+long int	find_smallest_number(t_list *lst);
 void		sort_medium_set(t_data *data);
 // ALGORITHM/BIG_ARGS_SET --- devide_and_sort
 void		split_and_push(t_data *data, long int key_nbr, int key_index);
+void		sort_a(t_data *data);
 void		sort_b(t_data *data);
 // ALGORITHM/BIG_ARGS_SET --- median_and_keynumber
 long int	find_median(t_data *data, t_list *lst);

@@ -12,6 +12,9 @@
 
 #include "push_swap.h"
 
+#include <stdio.h>
+void    display_stack(t_data *data);
+
 long int	find_smallest_number(t_list *lst)
 {
 	t_list		*tmp;
@@ -30,11 +33,9 @@ long int	find_smallest_number(t_list *lst)
 
 void	sort_medium_set(t_data *data)
 {
-	size_t		i;
 	long int	smallest_nb;
 	t_list		*next_nod;
 
-	i = 0;
 	while (ft_lstsize(data->lst_a) > 3)
 	{
 		smallest_nb = find_smallest_number(data->lst_a);
@@ -44,12 +45,8 @@ void	sort_medium_set(t_data *data)
 		while (data->lst_a->content != smallest_nb)
 			ra_or_rra(smallest_nb, data);
 		push_b(data);
-		i++;
 	}
 	sort_3_args(data);
-	while (i > 1)
-	{
+	while (ft_lstsize(data->lst_b))
 		push_a(data);
-		i--;
-	}
 }

@@ -12,6 +12,9 @@
 
 #include "push_swap.h"
 
+#include <stdio.h>
+void    display_stack(t_data *data);
+
 void	sort_big_set(t_data *data, int argc)
 {
 	int			key_index;
@@ -20,12 +23,14 @@ void	sort_big_set(t_data *data, int argc)
 	if (argc < 501)
 		key_index = ft_lstsize(data->lst_a) / 5;
 	else
-		key_index = ft_lstsize(data->lst_a) / 13;
+		key_index = ft_lstsize(data->lst_a) / 10;
 	while (ft_lstsize(data->lst_a) > key_index && ft_lstsize(data->lst_a) > 3)
 	{
 		key_nbr = find_key_number(data, data->lst_a, key_index);
 		split_and_push(data, key_nbr, key_index);
 	}
-	sort_medium_set(data);
+	// display_stack(data);
+	sort_a(data);
+	// display_stack(data);
 	sort_b(data);
 }

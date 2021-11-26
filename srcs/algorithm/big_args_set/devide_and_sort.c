@@ -41,6 +41,27 @@ void	split_and_push(t_data *data, long int key_nbr, int key_index)
 	}
 }
 
+void	sort_a(t_data *data)
+{
+	int			i;
+	long int	smallest_nb;
+	t_list		*next_nod;
+
+	i = 0;
+	while (ft_lstsize(data->lst_a) > 3)
+	{
+		smallest_nb = find_smallest_number(data->lst_a);
+		next_nod = data->lst_a->next;
+		if (smallest_nb == next_nod->content)
+			swap_a(data);
+		while (data->lst_a->content != smallest_nb)
+			ra_or_rra(smallest_nb, data);
+		push_b(data);
+		i++;
+	}
+	sort_3_args(data);
+}
+
 long int	find_biggest_number(t_list *lst)
 {
 	t_list		*tmp;
