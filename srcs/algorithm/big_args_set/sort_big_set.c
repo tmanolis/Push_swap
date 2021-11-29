@@ -6,14 +6,11 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:59:47 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/25 14:42:15 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/29 15:52:25 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-#include <stdio.h>
-void    display_stack(t_data *data);
 
 void	sort_big_set(t_data *data, int argc)
 {

@@ -22,13 +22,22 @@ SRCS = main.c											\
 		
 OBJS = $(addprefix $(SRCS_DIR), $(SRCS:.c=.o))
 
-# *--------- INCLUDES ---------* 
+# *--------- bonus ---------*
 
-INCLUDES_DIR = -I includes/header
+BONUS_DIR = ./bonus/
+BONUS_SRCS = checker.c									\
+	get_next_line.c										\
+	get_next_line_utils.c								\
+
+BONUS_OBJS = $(addprefix $(BONUS_DIR), $(BONUS_SRCS:.c=.o))
+
+# *--------- includes ---------* 
+
+INCLUDES_DIR = -I includes/
 
 # *--------- Libft ---------* 
 
-LIBFT_DIR = ./includes/Libft
+LIBFT_DIR = ./Libft
 LIBFT_FLAGS = -L$(LIBFT_DIR) -lft
 
 # *--------- OTHERS ---------*
