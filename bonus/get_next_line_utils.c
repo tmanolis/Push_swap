@@ -6,13 +6,13 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 17:25:08 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/07/07 17:17:13 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/30 12:19:22 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "checker.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen_GNL(const char *str)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr_GNL(char *s, int c)
 {
 	while (*s)
 	{
@@ -44,7 +44,7 @@ char	*ft_strdup(const char *s1)
 	char	*dst;
 
 	i = 0;
-	dst = malloc(sizeof(char) * (ft_strlen(s1) + 1));
+	dst = malloc(sizeof(char) * (ft_strlen_GNL(s1) + 1));
 	if (!dst)
 		return (NULL);
 	while (s1[i] != '\0')
@@ -56,7 +56,7 @@ char	*ft_strdup(const char *s1)
 	return (dst);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_GNL(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	j;
@@ -67,7 +67,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (s1 == NULL)
 		return (ft_strdup(s2));
 	new_str = (char *)malloc(sizeof(char)
-			* (ft_strlen(s1) + ft_strlen(s2)) + 1);
+			* (ft_strlen_GNL(s1) + ft_strlen_GNL(s2)) + 1);
 	if (!new_str)
 		return (NULL);
 	while (s1[i])

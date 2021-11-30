@@ -1,8 +1,7 @@
 # *--------- SOURCES ---------* 
 
 SRCS_DIR = ./srcs/
-SRCS = main.c											\
-	algorithm/sort_2_args.c								\
+SRCS = algorithm/sort_2_args.c							\
 	algorithm/sort_3_args.c								\
 	algorithm/sort_4_args.c								\
 	algorithm/sort_5_args.c								\
@@ -25,9 +24,15 @@ OBJS = $(addprefix $(SRCS_DIR), $(SRCS:.c=.o))
 # *--------- bonus ---------*
 
 BONUS_DIR = ./bonus/
-BONUS_SRCS = checker.c									\
+BONUS_SRCS = main_bonus.c								\
+	check_instructions.c								\
+	checker.c											\
 	get_next_line.c										\
 	get_next_line_utils.c								\
+	operations/push_bonus.c								\
+	operations/reverse_rotate_bonus.c					\
+	operations/rotate_bonus.c							\
+	operations/swap_bonus.c								\
 
 BONUS_OBJS = $(addprefix $(BONUS_DIR), $(BONUS_SRCS:.c=.o))
 
@@ -43,6 +48,7 @@ LIBFT_FLAGS = -L$(LIBFT_DIR) -lft
 # *--------- OTHERS ---------*
 
 NAME = push_swap
+B_NAME = checker
 
 CC = clang
 RM = rm -f
@@ -58,15 +64,22 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			make -C $(LIBFT_DIR)
-	        $(CC) $(CFLAGS) $(OBJS) $(LIBFT_FLAGS) $(INCLUDES_DIR) -o $(NAME)
+	        $(CC) $(CFLAGS) $(OBJS) $(LIBFT_FLAGS) $(INCLUDES_DIR) main.c -o $(NAME)
 
-clean:		
+$(B_NAME):	$(BONUS_OBJS) $(OBJS)
+			make -C $(LIBFT_DIR)
+			$(CC) $(CFLAGS) $(OBJS) $(BONUS_OBJS) $(LIBFT_FLAGS) $(INCLUDES_DIR) -o $(B_NAME)
+
+clean:
 			make -C $(LIBFT_DIR) clean
 			$(RM) $(OBJS)
 
-fclean:		clean
+bclean:		clean
+			$(RM) $(BONUS_OBJS)
+
+fclean:		clean bclean
 			make -C $(LIBFT_DIR) fclean
-			$(RM) $(NAME) 
+			$(RM) $(NAME) $(B_NAME)
 
 re:			fclean all
 
