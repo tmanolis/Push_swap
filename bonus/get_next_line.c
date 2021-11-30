@@ -6,13 +6,13 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:33:02 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/30 15:59:05 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/30 19:36:59 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-char	*copy_until_EOL(char *stock)
+char	*copy_until_eol(char *stock)
 {
 	int		i;
 	int		len;
@@ -68,19 +68,20 @@ char	*get_next_line_2(size_t ret, char *stock, char *buf, t_data *data)
 	}
 	if (ret > 0)
 	{
-		line = copy_until_EOL(stock);
+		line = copy_until_eol(stock);
 		free(stock);
 		get_the_spare(buf);
 	}
 	else
 	{
-		line = copy_until_EOL(stock);
+		line = copy_until_eol(stock);
 		free(stock);
 	}
 	if (read_instructions(data, line) == FAILURE)
 	{
 		ft_putstr_fd("Error\n", 2);
-		return (FAILURE);
+		free(line);
+		exit(-1);
 	}
 	return (line);
 }
@@ -94,9 +95,9 @@ char	*get_next_line(int fd, t_data *data)
 	if (BUFFER_SIZE <= 0 || read(fd, buf, 0) == -1)
 		return (NULL);
 	stock = NULL;
-	stock = ft_strjoin_GNL(stock, buf);
+	stock = ft_strjoin_gnl(stock, buf);
 	ret = 1;
-	while (ret > 0 && ft_strchr_GNL(stock, '\n') == 0)
+	while (ret > 0 && ft_strchr_gnl(stock, '\n') == 0)
 	{
 		ret = read(fd, buf, BUFFER_SIZE);
 		if (ret < 0)
@@ -105,7 +106,7 @@ char	*get_next_line(int fd, t_data *data)
 			return (NULL);
 		}
 		buf[ret] = '\0';
-		stock = ft_strjoin_GNL(stock, buf);
+		stock = ft_strjoin_gnl(stock, buf);
 	}
 	return (get_next_line_2(ret, stock, buf, data));
 }

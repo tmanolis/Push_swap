@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 11:19:11 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/30 16:00:58 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/11/30 19:23:26 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int		do_rotate(t_data *data, char *tmp);
 int		do_reverse_rotate(t_data *data, char *tmp);
 // BONUS --- get_next_line
 char	*get_next_line(int fd, t_data *data);
-char	*ft_strjoin_GNL(char *s1, char *s2);
-char	*ft_strchr_GNL(char *s, int c);
-size_t	ft_strlen_GNL(const char *str);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+char	*ft_strchr_gnl(char *s, int c);
+size_t	ft_strlen_gnl(const char *str);
 // BONUS --- operations
 void	push_a_bonus(t_data *data);
 void	push_b_bonus(t_data *data);
