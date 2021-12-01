@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:33:02 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/30 19:36:59 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/12/01 12:31:16 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,14 @@ void	get_the_spare(char *buf)
 	buf[j] = '\0';
 }
 
+void	exit4yourlife(t_data *data, char *line)
+{
+	ft_putstr_fd("Error\n", 2);
+	free(line);
+	free4yourlife(data);
+	exit(-1);
+}
+
 char	*get_next_line_2(size_t ret, char *stock, char *buf, t_data *data)
 {
 	char	*line;
@@ -78,11 +86,7 @@ char	*get_next_line_2(size_t ret, char *stock, char *buf, t_data *data)
 		free(stock);
 	}
 	if (read_instructions(data, line) == FAILURE)
-	{
-		ft_putstr_fd("Error\n", 2);
-		free(line);
-		exit(-1);
-	}
+		exit4yourlife(data, line);
 	return (line);
 }
 

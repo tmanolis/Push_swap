@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 14:34:16 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/30 19:18:05 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/12/01 11:41:51 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	do_push(t_data *data, char *tmp)
 
 int	do_swap(t_data *data, char *tmp)
 {
-	if ((*(tmp + 1) == 'a' || *(tmp + 1) == 'b' || *(tmp + 1) == 's') 
+	if ((*(tmp + 1) == 'a' || *(tmp + 1) == 'b' || *(tmp + 1) == 's')
 		&& *(tmp + 2) == '\n')
 	{
 		if (*(tmp + 1) == 'a' && ft_lstsize(data->lst_a) >= 2)
@@ -63,7 +63,7 @@ int	do_swap(t_data *data, char *tmp)
 
 int	do_rotate(t_data *data, char *tmp)
 {
-	if ((*(tmp + 1) == 'a' || *(tmp + 1) == 'b' || *(tmp + 1) == 'r') 
+	if ((*(tmp + 1) == 'a' || *(tmp + 1) == 'b' || *(tmp + 1) == 'r')
 		&& *(tmp + 2) == '\n')
 	{
 		if (*(tmp + 1) == 'a' && ft_lstsize(data->lst_a) >= 2)
@@ -91,7 +91,7 @@ int	do_rotate(t_data *data, char *tmp)
 
 int	do_reverse_rotate(t_data *data, char *tmp)
 {
-	if ((*(tmp + 2) == 'a' || *(tmp + 2) == 'b' || *(tmp + 2) == 'r') 
+	if ((*(tmp + 2) == 'a' || *(tmp + 2) == 'b' || *(tmp + 2) == 'r')
 		&& *(tmp + 3) == '\n')
 	{
 		if (*(tmp + 2) == 'a' && ft_lstsize(data->lst_a) >= 2)
