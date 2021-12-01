@@ -6,7 +6,7 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 16:49:11 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/23 18:01:21 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/12/01 12:33:20 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	arg_isdigit(int argc, char **argv)
 
 int	len_of_arg(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i < argc)
