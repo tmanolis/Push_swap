@@ -6,12 +6,12 @@
 /*   By: tmanolis <tmanolis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 11:19:11 by tmanolis          #+#    #+#             */
-/*   Updated: 2021/11/30 19:23:26 by tmanolis         ###   ########.fr       */
+/*   Updated: 2021/12/02 14:31:10 by tmanolis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
-# define	CHECKER_H
+# define CHECKER_H
 
 # include <sys/types.h>
 # include <sys/uio.h>
@@ -22,7 +22,7 @@
 # include "push_swap.h"
 
 # ifndef BUFFER_SIZE
-#  define	BUFFER_SIZE 42
+#  define BUFFER_SIZE 42
 # endif
 
 // BONUS
